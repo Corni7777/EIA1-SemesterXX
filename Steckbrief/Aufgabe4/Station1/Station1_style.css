@@ -1,0 +1,63 @@
+body{
+    background-image:url("../Station1/bg.png");
+    font-family: 'Times New Roman', Times, serif;
+}
+.navigation{
+    position: relative;
+    left: 500px;
+    margin-top: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    background-color: black;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    word-spacing: 5px;
+   }
+a{
+    text-decoration: none;
+    color: white;
+}
+.active{
+    color: rgb(9, 78, 0);
+    font-weight: bold;
+}
+a:hover{
+    color: rgb(4, 107, 10);
+    text-decoration: underline;
+}
+.format{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+.text{
+    position: absolute;
+    color: white;
+    z-index: 2;
+    margin-top: 50px;
+    margin-left: 50px;
+    
+}
+.text>h1{
+    margin-bottom: 50px;
+}
+.karte{
+    position: absolute;
+}
+.busch{
+    position: absolute;
+    z-index: 3;
+    margin-top: -54px;
+    margin-left: -83px;
+}
+.pengu{
+    position: absolute;
+    z-index: 3;
+    margin-top: 220px;
+    margin-left: 475px;
+}
+    
