@@ -54,6 +54,16 @@ window.addEventListener("load", function () {
     var OCEtoW = OCE2018 / world * 100;
     var OCEtoOCEper = (OCE2018 / OCE2008 - 1) * 100;
     var OCEtoOCEabs = OCE2018 - OCE2008;
+        /* Functions for continents */
+        function conti(continent, continent2018, continenttoW, cotocoper, cotocoabs) {
+            document.querySelector(".emission").innerHTML = continent2018;
+            document.querySelector(".relative").innerHTML = continenttoW.toFixed(2) + "%";
+            document.querySelector(".growth").innerHTML = cotocoper.toFixed(2) + "%";
+            document.querySelector(".growthrate").innerHTML = cotocoabs.toFixed(2);
+            document.querySelector("#titleRegion").innerHTML = continent;
+            document.querySelector(".xcontinent").innerHTML = continent;
+            document.querySelector("chartWrapper.chart").setAttribute("style", "height:" + continenttoW + "px");
+        }
     /* Click on continents */
     document.querySelector(".europe").addEventListener("click", function () { conti(EU, EU2018, EUtoW, EUtoEUper, EUtoEUabs); });
     document.querySelector(".northamerica").addEventListener("click", function () { conti(NA, NA2018, NAtoW, NAtoNAper, NAtoNAabs); });
@@ -61,14 +71,5 @@ window.addEventListener("load", function () {
     document.querySelector(".africa").addEventListener("click", function () { conti(AF, AF2018, AFtoW, AFtoAFper, AFtoAFabs); });
     document.querySelector(".asia").addEventListener("click", function () { conti(AS, Asia2018, AsiatoW, AsiatoAsiaper, AsiatoAsiaabs); });
     document.querySelector(".australia").addEventListener("click", function () { conti(OCE, OCE2018, OCEtoW, OCEtoOCEper, OCEtoOCEabs); });
-    /* Functions for continents */
-    function conti(continent, continent2018, continenttoW, cotocoper, cotocoabs) {
-        document.querySelector(".emission").innerHTML = continent2018;
-        document.querySelector(".relative").innerHTML = continenttoW.toFixed(2) + "%";
-        document.querySelector(".growth").innerHTML = cotocoper.toFixed(2) + "%";
-        document.querySelector(".growthrate").innerHTML = cotocoabs.toFixed(2);
-        document.querySelector("#titleRegion").innerHTML = continent;
-        document.querySelector("#subtitleRegion").innerHTML = continent;
-        document.querySelector("chartWrapper.chart").setAttribute("style", "height:" + continenttoW + "px");
-    }
+
 })
