@@ -2,9 +2,9 @@ window.addEventListener("load", function () {
     /* Continents */
     var OCE = "Australia";
     var AS = "Asia";
-    var NA = "North-Amerika";
+    var NA = "North-America";
     var EU = "Europe";
-    var SA = "South-Amerika";
+    var SA = "South-America";
     var AF = "Africa";
     /* Australia */
     var OCE2008 = 1993;
@@ -64,7 +64,7 @@ window.addEventListener("load", function () {
         document.querySelector(".growth").innerHTML = cotocoper.toFixed(2) + "%";
         document.querySelector(".growthrate").innerHTML = cotocoabs.toFixed(2);
         document.querySelector("#titleRegion").innerHTML = continent;
-        document.querySelector("#subtitleRegion").innerHTML = continent;
+        document.querySelector(".continentx").innerHTML = continent;
         document.querySelector("chartWrapper.chart").setAttribute("style", "height:" + continenttoW + "px");
     }
 });
