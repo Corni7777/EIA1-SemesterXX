@@ -69,7 +69,6 @@ window.addEventListener("load", function () {
         document.querySelector(".growthrate").innerHTML = cotocoabs.toFixed(2);
         document.querySelector("#titleRegion").innerHTML = continent;
         document.querySelector("#subtitleRegion").innerHTML = continent;
-        var diagram = document.querySelector(".chart");
-        diagram.style.height= continenttoW + "px";
+        document.querySelector("chartWrapper.chart").setAttribute("style", "height:" + continenttoW + "px");
     }
 })
