@@ -64,7 +64,7 @@ window.addEventListener("load", function () {
         document.querySelector(".growth").innerHTML = cotocoper.toFixed(2) + "%";
         document.querySelector(".growthrate").innerHTML = cotocoabs.toFixed(2);
         document.querySelector("#titleRegion").innerHTML = continent;
-        document.querySelector("#subtitleRegion").innerHTML = continent;
+        document.querySelector(".xcontinetns").innerHTML = continent;
         document.querySelector("chartWrapper.chart").setAttribute("style", "height:" + continenttoW + "px");
     }
 });
