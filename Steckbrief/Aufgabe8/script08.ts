@@ -1,8 +1,8 @@
-window.addEventListener("load",function(){
+window.addEventListener("load", function(): void {
 
     // Array with all sounds
 
-    var sounds:HTMLAudioElement []= [
+    var sounds: HTMLAudioElement [] = [
         new Audio("assets/kick.mp3"),
         new Audio("assets/snare.mp3"),
         new Audio("assets/hihat.mp3"),
@@ -11,43 +11,69 @@ window.addEventListener("load",function(){
         new Audio("assets/F.mp3"),
         new Audio("assets/G.mp3"),
         new Audio("assets/laugh-1.mp3"),
-        new Audio("assets/laugh-2.mp3")]
-    
+        new Audio("assets/laugh-2.mp3")]; 
+    // other variables    
+    var myInterval: number;
+    var index: number = 0;
+    var playback: boolean;          
+     
     // Function to play sounds  
 
-    function playSample(sound){
-        sound.play()
+    function playSample(sound: HTMLAudioElement): void {
+        sound.play();
     }
-
-    // Array for beat
-    var beatsounds:HTMLAudioElement[]=[
-        new Audio("assets/kick.mp3"),
-        new Audio("assets/snare.mp3"),
-        new Audio("assets/hihat.mp3"),] 
-    
-
     // Function to play beat
-   function playBeat(){
-   setInterval(function(){
-       
-       for (let counter = 0; counter < beatsounds.length; counter++) 
-       {beatsounds[counter].play();}
+    
+    function playBeat (): void {
+        
+        // start playing beat and turn into stop button
+        if (document.querySelector("#playButton").getAttribute("class") == "fas fa-play-circle") {
+            document.querySelector("#playButton").setAttribute("class", "fas fa-stop-circle");
+            myInterval = setInterval(tone, 500);
+            }
+        // stop playing beat and turn into play button
+        else {document.querySelector("#playButton").setAttribute("class", "fas fa-play-circle");
+              clearInterval(myInterval); }
+        // function to set beat 
+        function tone(): void {
+            playSample(sounds[index]);
+            index++;
+            if (index == 3) { index = 0; } 
+        }
+    }
+    // function to delete remix
+    function deleteRemix(): void {
+        clearInterval(myInterval);
+        if (document.querySelector("#playButton").getAttribute("class") == "fas fa-stop-circle") {
+            document.querySelector("#playButton").setAttribute("class", "fas fa-play-circle"); }
+        }
+ 
+    // function to play remix
+    function playRemix(): void {
+        myInterval = setInterval(mix, 250);
+        function mix(): void {
+            index = Math.floor(Math.random() * 5);
+            playSample(sounds[index]);    
+        }
+        playback = true;
+        if (playback == true) {document.querySelector("#playButton").setAttribute("class", "fas fa-stop-circle"); }
+        else {document.querySelector("#playButton").setAttribute("class", "fas fa-play-circle");
+              clearInterval(myInterval); } }
 
-   }, 500);}
     // Play Sounds on click
+    document.querySelector("#buttonKick").addEventListener("click", function (): void {playSample(sounds[0]); });
+    document.querySelector("#buttonSnare").addEventListener("click", function (): void {playSample(sounds[1]); });
+    document.querySelector("#buttonHihat").addEventListener("click", function (): void {playSample(sounds[2]); });
+    document.querySelector("#buttonA").addEventListener("click", function (): void {playSample(sounds[3]); });
+    document.querySelector("#buttonC").addEventListener("click", function (): void {playSample(sounds[4]); });
+    document.querySelector("#buttonF").addEventListener("click", function (): void {playSample(sounds[5]); });
+    document.querySelector("#buttonG").addEventListener("click", function (): void {playSample(sounds[6]); });
+    document.querySelector("#buttonLaugh1").addEventListener("click", function (): void {playSample(sounds[7]); });
+    document.querySelector("#buttonLaugh2").addEventListener("click", function (): void {playSample(sounds[8]); });
 
-    document.querySelector("#buttonKick").addEventListener("click", function(){playSample(sounds[0])});
-    document.querySelector("#buttonSnare").addEventListener("click", function(){playSample(sounds[1])});
-    document.querySelector("#buttonHihat").addEventListener("click", function(){playSample(sounds[2])});
-    document.querySelector("#buttonA").addEventListener("click", function(){playSample(sounds[3])});
-    document.querySelector("#buttonC").addEventListener("click", function(){playSample(sounds[4])});
-    document.querySelector("#buttonF").addEventListener("click", function(){playSample(sounds[5])});
-    document.querySelector("#buttonG").addEventListener("click", function(){playSample(sounds[6])});
-    document.querySelector("#buttonLaugh1").addEventListener("click", function(){playSample(sounds[7])});
-    document.querySelector("#buttonLaugh2").addEventListener("click", function(){playSample(sounds[8])});
-
-    document.querySelector("#playbutton").addEventListener("click", function(){playBeat()});
+       
+    document.querySelector("#playButton").addEventListener("click", function(): void {playBeat(); });
+    document.querySelector("#remixButton").addEventListener("click", function(): void {playRemix(); });
+    document.querySelector("#deleteButton").addEventListener("click", function(): void {deleteRemix(); });
    
-
-
-    })
+});
