@@ -1,0 +1,67 @@
+body{
+    background-color: rgb(167, 153, 147);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.format{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#headline{
+    text-align: center;
+}
+#onetask{
+    margin-top: 3px;
+}
+#taskinput{
+    width: 350px;
+    height: 50px;
+    text-indent: 60px;
+    border-style:double;
+    border-width:thick;
+}
+.fa-circle{
+    position: relative;
+    left: -15px;
+    top: 31px;
+    font-size: 35px;
+    color: rgb(204, 204, 204);
+}
+.fa-circle:hover{
+    cursor: pointer;
+}
+.fa-trash-alt{
+    position:relative;
+    left: 315px;
+    top: 31px;
+    font-size: 35px;
+    color: rgb(204, 204, 204);
+
+}
+.fa-trash-alt:hover{
+    cursor: pointer;
+    color: #000;
+}
+.fa-check{
+    position: relative;
+    left: -27px;
+    top: -5px;
+    font-size: 20px;
+    color: #000; 
+}
+.fa-check:hover{
+    cursor: pointer;
+}
+p {
+    width: 354px;
+    height: 36px;
+    text-indent: 60px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 18px;
+    border-style:double;
+    border-width:thick;
+    overflow-wrap:break-word;
+    margin-top: -20px;   
+    
+}
