@@ -1,8 +1,8 @@
 window.addEventListener("load", function () {
     // index to count tasks later (also for open and done tasks)
-    var index = 0;
-    var indexDone = 0;
-    var indexOpen = 0;
+    let index = 0;
+    let indexDone = 0;
+    let indexOpen = 0;
     // Create new task by pressing enter
     document.querySelector("#taskinput").addEventListener("keydown", function (event) {
         if (event.keyCode == 13) {
@@ -10,15 +10,15 @@ window.addEventListener("load", function () {
         }
     });
     // variable for Input
-    var inputtask = document.querySelector("#taskinput");
+    let inputtask = document.querySelector("#taskinput");
     // function that adds new tasks
     function addtasktext() {
         // constants for added tasks: div, textparagraph, icons
-        var onetask = document.querySelector("#onetask");
-        var pTask = document.createElement("p");
-        var circle = document.createElement("i");
-        var trash = document.createElement("i");
-        var check = document.createElement("i");
+        const onetask = document.querySelector("#onetask");
+        const pTask = document.createElement("p");
+        const circle = document.createElement("i");
+        const trash = document.createElement("i");
+        const check = document.createElement("i");
         // counter going up for an added task
         index++;
         document.querySelector("#count").innerHTML = index + " in total";
@@ -82,8 +82,8 @@ window.addEventListener("load", function () {
         });
     }
     // add constants for microphone and artyom
-    var mic = document.querySelector(".fa-microphone");
-    var artyom = new Artyom();
+    const mic = document.querySelector(".fa-microphone");
+    const artyom = new Artyom();
     artyom.addCommands({
         // say "new task" to create a new task    
         indexes: ["new task *"],
